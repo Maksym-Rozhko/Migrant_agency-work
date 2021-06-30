@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Proxima Nova', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #000;
+  background: #F9F9F9;
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1464px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section {
+  padding-top: 100px;
+}
+
+::-webkit-scrollbar {width: 12px;height: 12px;}
+::-webkit-scrollbar-track-piece {background:rgba(0,0,0,0);}
+::-webkit-scrollbar-thumb:vertical {height:10px;background:#0818D5;}
+::-webkit-scrollbar-thumb:vertical:hover {background:#000;}
+
+@media (max-width: 575px) {
+  .section {
+    padding-top: 50px;
+  }
+}
+
+@mixin fonts {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin mainButton {
+  background: #0818D5;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 14px 28px;
+  @include fonts;
+  color: #F9F9F9;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease-in-out .4s;
+
+  &:hover {
+    background-color: transparent;
+    color: #0818D5;
+    border: 1px solid #0818D5;
+  }
+}
+
+@mixin mainButtonTransparent {
+  background: transparent;
+  border: 1px solid #0818D5;
+  border-radius: 3px;
+  padding: 17px 28px;
+  @include fonts;
+  color: #0818D5;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  max-width: 202px;
+  width: 100%;
+  transition: all ease-in-out .4s;
+
+  &:hover {
+    background-color: #0818D5;
+    color: #F9F9F9;
+    border: 1px solid transparent;
+  }
+}
+
+@mixin mainTitle {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 105%;
+  color: #0818D5;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: #0818D5;
+    width: 100px;
+    height: 8px;
+    bottom: -12px;
+    left: calc(50% - 50px);
+  }
+}
+
+@mixin mainTitleMobile {
+  font-size: 28px;
+  line-height: 100%;
+
+  &::after {
+    width: 50px;
+    height: 4px;
+    bottom: -6px;
+    left: calc(50% - 25px);
+  }
+}
