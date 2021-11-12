@@ -1,0 +1,119 @@
+.reasons {
+    overflow: hidden;
+    
+    .main-title {
+        @include mainTitle;
+        text-align: center;
+    }
+
+    &__container {
+        margin-top: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .reasons-item {
+            display: flex;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 0px 30px;
+            max-width: 472px;
+            width: 100%;
+            transition: all ease-in-out .4s;
+
+            &:not(:last-child) {
+                margin-right: 12px;
+            }
+
+            &__icon {
+                background: #EBE4FB;
+                border-radius: 0px 30px;
+                width: 114px;
+                height: 114px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 24px;
+                transition: all ease-in-out .4s;
+
+                .icon {
+                    width: 56px;
+                    height: 56px;
+                    fill: #0818D5;
+                    transition: all ease-in-out .4s;
+                }
+            }
+
+            &__text {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 105%;
+                color: #000000;
+                margin-top: 0;
+                margin-bottom: 0;
+                max-width: 250px;
+            }
+
+            &:hover {
+                background: #EBE4FB;
+
+                .reasons-item__icon {
+                    background: #0818D5;
+
+                    .icon {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .reasons {
+        &__container {
+            flex-direction: column;
+            
+            .reasons-item {
+                &:not(:last-child) {
+                    margin-right: 0;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .reasons {
+        .main-title {
+            @include mainTitleMobile;
+        }
+        &__container {
+            .reasons-item {
+                &__icon {
+                    min-width: 114px;
+                    margin-right: 12px;
+                }
+
+                &__text {
+                    font-size: 18px;
+                    line-height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .reasons {
+        &__container {
+            .reasons-item {
+                &__text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
